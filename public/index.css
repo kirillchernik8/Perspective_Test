@@ -1,0 +1,423 @@
+html {
+  height: 1962px;
+}
+
+.main {
+  position: absolute;
+  width: 1280px;
+  height: 1574px;
+  left: 0px;
+  top: 62px;
+  background: #ffffff;
+}
+
+.DiscoverYourPers {
+  position: absolute;
+  left: 75px;
+  /* right: 58.75%; */
+  top: 97px;
+  bottom: 94.14%;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #113264;
+  width: 453px;
+  height: 18px;
+}
+
+.CompleteThe7Min {
+  position: absolute;
+  left: 5.86%;
+  right: 48.67%;
+  top: 133px;
+  bottom: 92.3%;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #495057;
+}
+
+.questionList {
+  position: relative;
+  width: 740px;
+  height: 1593px;
+  left: 270px;
+  top: 199px;
+}
+
+.question {
+  position: relative;
+  padding-bottom: 72px;
+  height: 20%;
+  top: 21%;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.ADR {
+  position: relative;
+  width: 570px;
+  height: 30px;
+
+  top: 32px;
+}
+.QuestionText {
+  position: relative;
+  width: 521px;
+  max-height: 28%;
+  min-height: 15%;
+  left: 108px;
+  top: 29px;
+  z-index: 1;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #495057;
+}
+
+.Disagree {
+  position: relative;
+  /* right: 50.58%; */
+  left: 90px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: right;
+  color: #fa4344;
+  height: 20px;
+  width: 100px;
+  top: 12px;
+}
+
+.Agree {
+  position: relative;
+  /* right: -34.12%; */
+  left: 574px;
+  top: -8px;
+  bottom: 10%;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: -1px;
+  color: #00a079;
+  height: 20px;
+  width: 100px;
+  text-align: left;
+}
+
+/* .radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+
+  background: #ffffff;
+  mix-blend-mode: normal;
+  border: 3px solid #aaaaaa;
+  box-sizing: border-box;
+  transform: rotate(-180deg);
+  color: #666;
+  height: 24px;
+  width: 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 12px;
+  outline: none;
+} */
+/* .radio::before{
+  content :"";
+}
+.radio:checked::before {
+
+
+  transform: rotate(40deg);
+}
+.radio:hover {
+  background-color: #f7f7f7;
+}
+.radio:checked {
+  background-color: #495057;
+} */
+
+.container {
+  /* display: block; */
+  position: relative;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  opacity: 0;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  margin: 12px;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  background-color: #eee;
+  background: #ffffff;
+  mix-blend-mode: normal;
+  border: 3px solid #aaaaaa;
+  box-sizing: border-box;
+  transform: rotate(-180deg);
+  color: #666;
+  height: 24px;
+  width: 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  left: 0;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: bisque;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  background-color: bisque;
+  border-width: 0 0.05px 0.5px 0;
+}
+
+.Group21 {
+  display: flex;
+  position: relative;
+  width: 312px;
+  height: 25px;
+  top: -32px;
+  left: 214px;
+}
+
+.emailForm {
+  width: 740px;
+  height: 155px;
+  top: 0;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+}
+
+.YourEmail {
+  position: relative;
+  width: 524px;
+  height: 19px;
+  left: 108px;
+  top: 24px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #495057;
+}
+
+#emailField {
+  position: relative;
+  top: 43px;
+  width: 570px;
+  height: 48px;
+  left: 85px;
+  background: #ffffff;
+  border: 2px solid #aaaaaa;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+/* 
+.SaveAndContinue {
+  position: relative;
+  left: 46.17%;
+  top: 64px;
+  font-family: 'Roboto' sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #ffffff;
+} */
+::placeholder {
+  position: absolute;
+  width: 156px;
+  height: 25px;
+  left: 378px;
+  top: 1398px;
+  color: #e5e5e5;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  padding-left: 24px;
+  /* identical to box height */
+
+  text-align: left;
+}
+.divAroundSubmit {
+  position: absolute;
+  left: 574px;
+  top: 1856px;
+  background: #3d59fa;
+  border-radius: 3px;
+  color: white;
+  width: 155px;
+  height: 36px;
+}
+
+.results {
+  position: absolute;
+  width: 1179px;
+  height: 270px;
+  left: 48px;
+  top: 62px;
+
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.yourPerspective {
+  position: absolute;
+  left: 7.11%;
+  right: 71.17%;
+  top: 104px;
+  bottom: 90.11%;
+  height: 28;
+  width: 278;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 30px;
+
+  color: #113264;
+}
+.yourType {
+  position: absolute;
+  width: 500.71px;
+  height: 13.5px;
+  left: 87px;
+  top: 155px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #343a40;
+}
+
+.resultGraph {
+  width: 218px;
+  position: relative;
+  width: 218px;
+  height: 125.36px;
+  left: -28px;
+  top: -44%;
+}
+
+.chart {
+  position: relative;
+  width: 218.33px;
+  height: 14.46px;
+  left: 848.52px;
+  top: 44.25px;
+  background-color: #e9ecef;
+  border-radius: 3px;
+  margin-bottom: 21.21px;
+}
+
+.positive {
+  width: 110px;
+  height: 14.46px;
+  position: relative;
+
+  left: 111px;
+  background: #a920cb;
+  border-radius: 0px 3px 3px 0px;
+}
+
+.negative {
+  width: 110px;
+  height: 14.46px;
+  position: relative;
+
+  background: #a920cb;
+  border-radius: 0px 3px 3px 0px;
+  transform: rotate(-180deg);
+}
+
+.right {
+
+  display: grid;
+  position: relative;
+  left: 1055px;
+  top: -75px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 146.16%;
+  color: #878787;
+  color: #878787;
+  width: 145px;
+  height: 35px;
+}
+
+.left {
+  position: absolute;
+  display: grid;
+  position: relative;
+  width: 145px;
+  height: 132px;
+  left: 750px;
+  top: 175px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 146.16%;
+  color: #878787;
+}

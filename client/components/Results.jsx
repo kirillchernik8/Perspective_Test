@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 
-
 class Results extends Component {
   constructor() {
     super();
     this.state = {
       finalResult: [],
-      type: ""
+      type: "",
     };
     this.calculateResults = this.calculateResults.bind(this);
     this.calculateType = this.calculateType.bind(this);

@@ -3,7 +3,9 @@ import ReactDOM from "react-dom";
 import Question from "./Question.jsx";
 import Email from "./Email.jsx";
 import Results from "./Results.jsx";
-
+import NoEmail from '../noEmail.jsx'
+import { callbackify } from "util";
+import axios from 'axios'
 
 class App extends Component {
   constructor() {
@@ -16,35 +18,42 @@ class App extends Component {
         JP: []
       },
       email: "",
-      renderingQuestions: true
+      renderingQuestions: true,
+      modal:false
     };
     this.onSelect = this.onSelect.bind(this);
     this.onClick = this.onClick.bind(this);
     this.onSave = this.onSave.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ email: event.target.value });
   }
 
   onClick(e) {
     e.preventDefault();
-    this.setState({ renderingQuestions: !this.state.renderingQuestions }), (e)=>onSave(e);
+    this.onSave()
   }
 
-  onSave(e){
-    e.preventDefault();
-    axios({
-      url:'/results',
-      method:"post",
-      data: {
-        email: this.state.email,
-        result: this.state.result
-      }
-  })
-  .catch(err=>console.error(err))
-  }
+    onSave() {
+     if(this.state.email !== ''){
+       axios({
+         url: "/results",
+         method: "post",
+         data: {
+           email: this.state.email,
+           result: this.state.result
+         }
+        }, ()=>this.setState({ renderingQuestions: false }))
+        // .catch(err=>console.error(err))
+       
+     } else{
+       this.setState({ modal: true})
+    }
+    }
+  
   onSelect(e) {
     let updatedState = Object.assign({}, this.state.result);
     var newState = (function() {
@@ -53,7 +62,6 @@ class App extends Component {
     })();
     this.setState({ result: newState });
   }
-
 
   render() {
     const questions = [
@@ -66,57 +74,58 @@ class App extends Component {
       {
         question: "You consider yourself more practical than creative.",
         type: "SN",
-        id:2
+        id: 2
       },
       {
         question:
           "Winning a debate matters less to you than making sure no one gets upset.",
         type: "TF",
-        id:3
+        id: 3
       },
       {
         question:
           "You get energized going to social events that involve many interactions.",
         type: "EI",
-        id:4
+        id: 4
       },
       {
         question:
           "You often spend time exploring unrealistic and impractical yet intriguing ideas.",
         type: "SN",
-        id:5
+        id: 5
       },
       {
         question:
           "Deadlines seem to you to be of relative rather than absolute importance.",
         type: "JP",
-        id:6
+        id: 6
       },
       {
         question:
           "Logic is usually more important than heart when it comes to making important decisions.",
         type: "TF",
-        id:2
+        id: 2
       },
       {
         question: "Your home and work environments are quite tidy.",
         type: "JP",
-        id:7
+        id: 7
       },
       {
         question: "You do not mind being at the center of attention.",
         type: "EI",
-        id:8
+        id: 8
       },
       {
         question:
           "Keeping your options open is more important than having a to-do list.",
         type: "JP",
-        id:9
+        id: 9
       }
     ];
 
     return (
+
       <div className="app">
         {this.state.renderingQuestions ? (
           <div>
@@ -143,7 +152,8 @@ class App extends Component {
                     </div>
                   );
                 })}
-                <Email  onChange = {this.handleChange} value={this.state.email}/>
+                <Email onChange={this.handleChange} value={this.state.email} />
+                <NoEmail modal={this.state.modal} toggle={this.onSave}/>
               </div>
               <button className="divAroundSubmit" onClick={this.onClick}>
                 {" "}

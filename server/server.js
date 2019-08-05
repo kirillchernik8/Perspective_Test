@@ -2,7 +2,7 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors')
-const saveResult = require('./server')
+const saveResult = require('../db.js').saveResult
 const app = express();
 const parser = require('body-parser')
 
@@ -13,9 +13,11 @@ app.use(express.static(path.join(__dirname, '../public')))
 app.post('/results', (req, res)=>{
   saveResult(req.body, (err) => {
     if (err) {
-      console.error(err, ' <-- Error occured on sending a message to host');
+      console.error(err, ' <-- Error occured during saving the result');
       res.sendStatus(500)
-    } else res.sendStatus(201)
+    } else {
+      res.sendStatus(201)
+    }
   })
 })
 

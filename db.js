@@ -12,16 +12,10 @@ const db = new sqlite3.Database(dbPath, (err) => {
 
 
 db.run(
-	`CREATE TABLE if not exists test_results(
-		email VARCHAR(255),
-		EI INTEGER,
-        TF INTEGER,
-        SN INTEGER,
-        JP INTEGER,
-	)`,
+	" create table if not exists test_results( email VARCHAR,EI INTEGER,TF INTEGER,SN INTEGER,JP INTEGER)",
 	(err) => {
 		if (err) console.error(err)
-		else console.log('created the hosts table');
+		else console.log('created the test_results table');
 	}
 )
 
@@ -41,14 +35,13 @@ let calculateOneResult = (array) => {
 	return result;
 }
 
-let saveResult = (email, data, callback) => {
-	db.get(`insert into test_results
-	( email, EI, TF, SN, JP) values (?, ?, ? , ? , ? , ? )`, [email,
+let saveResult = (data, callback) => {
+	db.get("insert into test_results ( email, EI, TF, SN, JP) values (?, ?, ? , ? , ?  )", [
+		data.email,
 		calculateOneResult(data.result.EI),
 		calculateOneResult(data.result.TF),
 		calculateOneResult(data.result.SN),
-		calculateOneResult(data.result.JP),
-		message
+		calculateOneResult(data.result.JP)
 	], (err) => {
 		if (err) callback(err)
 		callback()

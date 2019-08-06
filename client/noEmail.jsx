@@ -8,8 +8,8 @@ class NoEmail extends React.Component {
 
   render() {
     return (
-      <div>
-        <Modal isOpen={this.props.modal} toggle={this.props.toggle} className="modal">
+      <div >
+        <Modal isOpen={this.props.modal} toggle={this.props.toggle} className='alertModal'>
           <ModalHeader toggle={this.props.toggle}>Email form:  </ModalHeader>
           <ModalBody>
            Please enter your email in the form below

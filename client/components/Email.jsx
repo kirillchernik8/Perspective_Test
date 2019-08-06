@@ -4,9 +4,10 @@ class Email extends Component {
   constructor() {
     super();
   }
+
   render() {
     return (
-      <div className="emailForm">
+      <div className={this.props.className}>
           <div className="YourEmail"> Your Email </div>
           <input
             id="emailField"

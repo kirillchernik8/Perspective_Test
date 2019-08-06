@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-var CompressionPlugin = require('compression-webpack-plugin');
 var BrotliGzipPlugin = require('brotli-gzip-webpack-plugin');
 
 module.exports = {
@@ -15,6 +14,10 @@ module.exports = {
         query: {
           presets: ['react', 'es2015', 'env']
         },
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },

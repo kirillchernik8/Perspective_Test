@@ -5,7 +5,7 @@ class Results extends Component {
     super();
     this.state = {
       finalResult: [],
-      type: "",
+      type: ""
     };
     this.calculateResults = this.calculateResults.bind(this);
     this.calculateType = this.calculateType.bind(this);
@@ -140,11 +140,11 @@ class Results extends Component {
           </div>
         </div>
 
-        <div>
-          <span className="right "> Extraversion (E) </span>
-          <span className="right "> Intuition (N) </span>
-          <span className="right "> Feeling (F) </span>
-          <span className="right "> Perceiving (P) </span>
+        <div className="right ">
+          <span> Extraversion (E) </span>
+          <span> Intuition (N) </span>
+          <span> Feeling (F) </span>
+          <span> Perceiving (P) </span>
         </div>
       </div>
     );
